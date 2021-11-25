@@ -1,1 +1,5 @@
+-- Change Your Settings if loss still high --
+
+Open Dota terminal and copy paste this text
+
 sdr SDRClient_ForceRelayCluster hkg
