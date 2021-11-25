@@ -1,0 +1,14 @@
+enum4linux
+
+msfconsole
+search & use aux/smtp_enum
+
+pentestmonkey.net/tools/smtp-user-enum
+smtp-user-enum -D domain.com -M mode -u user -t targetIP
+
+telnet 100.10.300.222. (port smtp "25, 465, 587, 2525")
+ex: telnet 103.18.133.1xx 25
+HELO/EHLO admin@domain.com
+VRFY user <- didapatkan dari smtp_enum
+MAIL FROM:admin@doamin.com
+RCPT TO:nanana@gmail.com

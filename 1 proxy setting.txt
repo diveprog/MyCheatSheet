@@ -1,0 +1,21 @@
+masukkan
+# Proxy Settings
+export no_proxy=localhost,127.0.0.1,localaddress,.localdomain.com
+export ftp_proxy=http://43.239.152.223:8080
+export http_proxy=43.239.152.223:8080
+export https_proxy=43.239.152.223:8080
+export rsync_proxy=43.239.152.223:8080
+
+Edit file 
+/etc/profile
+/etc/environment
+
+ceknya di - env | grep proxy
+
+hapusnya
+
+unset https_proxy .....
+
+Cari aja set proxyarch linux
+
+IP devshell : 34.87.185.135
