@@ -1,5 +1,5 @@
--- Change Your Settings if loss still high --
+-- Change Your Settings if Loss Packet Still High while Playing DOTA 2 --
 
-Open Dota terminal and copy paste this text
+Open your DOTA 2 terminal and copy paste this text
 
 sdr SDRClient_ForceRelayCluster hkg
