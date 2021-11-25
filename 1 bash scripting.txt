@@ -1,0 +1,33 @@
+grep "href=" index.html | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | sort -u > list.txt
+
+cat index.html | grep -o 'http://[^"]*' | cut -d "/" -f 3 | sort -u > last.txt
+for url in $(cat last.txt); do host $url; done
+for url in $(cat last.txt); do host $url; done | grep "has address" | cut -d " " -f 4 | sort -u >
+ipadd.txt
+
+ping 192.168.1.1 -c 1 > ip.txt
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=2.06 ms
+
+--------------KETERANGAN------------------
+#cut (memotong)
+#-d | delimeter terkait seperti kosong, atau :
+#-f field | value yang ada
+#tr translate (menghilangkan)
+cat ip.txt | grep "64 bytes" | cut -d " " -f 4 | tr -d ":"
+-------------------------------------------
+
+------- IPSWEEP ---------
+#!/bin/bash
+
+for ip in `seq 1 25` ; do
+ping -c 1 $1.$ip | grep "64 bytes" | cut  -d " " -f 4 | tr -d ":" &
+done
+
+-------------------------
+
+#run
+./ipsweep.sh 192.168.1 > iplist.txt
+
+#nmapscripting
+for ip in $(cat iplist.txt); do nmap -sS -p 80 -T4 $ip; done
+for ip in $(cat iplist.txt); do nmap -sS -p 80 -T4 $ip & done
