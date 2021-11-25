@@ -1,21 +1,17 @@
-masukkan
-# Proxy Settings
+# cara masukkan Proxy Settings
 export no_proxy=localhost,127.0.0.1,localaddress,.localdomain.com
-export ftp_proxy=http://43.239.152.223:8080
-export http_proxy=43.239.152.223:8080
-export https_proxy=43.239.152.223:8080
-export rsync_proxy=43.239.152.223:8080
+export ftp_proxy=http://IP:PORT
+export http_proxy=IP:PORT
+export https_proxy=IP:PORT
+export rsync_proxy=IP:PORT
 
-Edit file 
+# Edit file 
 /etc/profile
 /etc/environment
 
-ceknya di - env | grep proxy
+# ceknya di - env | grep proxy
 
-hapusnya
-
+# hapusnya
 unset https_proxy .....
 
-Cari aja set proxyarch linux
-
-IP devshell : 34.87.185.135
+Source : Google "proxyarch linux"
